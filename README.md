@@ -12,6 +12,6 @@ git clone https://github.com/agracie/Shadowsocks_install.git
 bash Shadowsocks_install/ssinstall.sh
 ```
 
-This article cover client installations:
+This link covers client installations:
 
 https://www.bolehvpn.net/shadowsocks-installation/
