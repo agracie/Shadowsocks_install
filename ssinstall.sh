@@ -8,7 +8,7 @@ echo
 
 read -s -p 'Enter Port: ' port
 
-sudo apt-get -y -o Acquire::ForceIPv4=true update  && sudo apt-get -y -o Acquire::ForceIPv4=true upgrade && sudo apt-get -y install python-pip python-m2crypto  && sudo easy_install shadowsocks
+sudo apt-get -y -o Acquire::ForceIPv4=true update  && sudo apt-get -y install python-pip python-m2crypto  && sudo easy_install shadowsocks
 
 sudo touch /etc/shadowsocks.json && sudo tee -a /etc/shadowsocks.json << EOL
 {
