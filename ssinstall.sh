@@ -8,9 +8,9 @@ echo
 
 read -s -p 'Enter Port: ' port
 
-sudo apt-get -y -o Acquire::ForceIPv4=true update  && sudo apt-get -y install python-pip python-m2crypto  && sudo easy_install shadowsocks
+apt-get -y -o Acquire::ForceIPv4=true update  && apt-get -y install python-pip python-m2crypto  && easy_install shadowsocks
 
-sudo touch /etc/shadowsocks.json && sudo tee -a /etc/shadowsocks.json << EOL
+touch /etc/shadowsocks.json && sudo tee -a /etc/shadowsocks.json << EOL
 {
 "server":"$ip",
 "server_port":$port,
@@ -21,10 +21,10 @@ sudo touch /etc/shadowsocks.json && sudo tee -a /etc/shadowsocks.json << EOL
 }
 EOL
 
-sudo iptables -I INPUT -p tcp --dport $port -j ACCEPT
+iptables -I INPUT -p tcp --dport $port -j ACCEPT
 
-sudo apt-get -y install iptables-persistent
+apt-get -y install iptables-persistent
 
-sudo ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d start
 
-sudo systemctl enable shadowsocks
+systemctl enable shadowsocks
